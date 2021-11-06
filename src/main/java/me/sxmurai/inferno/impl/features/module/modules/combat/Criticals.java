@@ -4,6 +4,7 @@ import me.sxmurai.inferno.asm.network.packet.c2s.IPlayerInteractEntityC2SPacket;
 import me.sxmurai.inferno.impl.events.network.PacketEvent;
 import me.sxmurai.inferno.impl.features.module.Module;
 import me.sxmurai.inferno.impl.settings.Setting;
+import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -15,6 +16,7 @@ import org.lwjgl.glfw.GLFW;
 public class Criticals extends Module {
     public final Setting<Mode> mode = new Setting<>("Mode", Mode.Packet);
 
+    @EventHandler
     private final Listener<PacketEvent.Send> packetSendListener = new Listener<>((event) -> {
         if (event.getPacket() instanceof PlayerInteractEntityC2SPacket) {
             PlayerInteractEntityC2SPacket packet = event.getPacket();
