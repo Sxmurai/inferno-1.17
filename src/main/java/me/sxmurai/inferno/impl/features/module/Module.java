@@ -86,7 +86,6 @@ public class Module implements Wrapper {
         this.drawn.setValue(drawn);
     }
 
-    public void onUpdate() { }
     public void onTick() { }
     public void onRenderWorld() { }
     public void onRenderHud() { }
