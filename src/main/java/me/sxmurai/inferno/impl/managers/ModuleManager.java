@@ -4,13 +4,12 @@ import me.sxmurai.inferno.Inferno;
 import me.sxmurai.inferno.impl.events.input.KeyEvent;
 import me.sxmurai.inferno.impl.features.module.Module;
 import me.sxmurai.inferno.impl.features.module.modules.combat.Criticals;
-import me.zero.alpine.listener.EventHandler;
-import me.zero.alpine.listener.Listenable;
-import me.zero.alpine.listener.Listener;
+import meteordevelopment.orbit.EventHandler;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 
-public class ModuleManager implements Listenable {
+public class ModuleManager {
     private final ArrayList<Module> modules = new ArrayList<>();
 
     public ModuleManager() {
@@ -22,16 +21,15 @@ public class ModuleManager implements Listenable {
     }
 
     @EventHandler
-    private final Listener<KeyEvent> keyEventListener = new Listener<>((event) -> {
-        if (event.action() == KeyEvent.Action.Pressed) {
+    public void onKey(KeyEvent event) {
+        if (event.action() == KeyEvent.Action.Pressed && event.code() != GLFW.GLFW_KEY_UNKNOWN) {
             this.modules.forEach((module) -> {
                 if (module.getBind() == event.code()) {
-                    System.out.println(module.getName() + " toggled");
                     module.toggle();
                 }
             });
         }
-    });
+    }
 
     public ArrayList<Module> getModules() {
         return modules;

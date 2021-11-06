@@ -2,7 +2,7 @@ package me.sxmurai.inferno.impl.events.input;
 
 import org.lwjgl.glfw.GLFW;
 
-public record KeyEvent(Action action, int code) {
+public record KeyEvent(Action action, int code, int scancode) {
     public enum Action {
         Release(GLFW.GLFW_RELEASE),
         Pressed(GLFW.GLFW_PRESS),

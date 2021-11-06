@@ -4,7 +4,6 @@ import me.sxmurai.inferno.Inferno;
 import me.sxmurai.inferno.impl.features.Wrapper;
 import me.sxmurai.inferno.impl.settings.Bind;
 import me.sxmurai.inferno.impl.settings.Setting;
-import me.zero.alpine.listener.Listenable;
 import org.lwjgl.glfw.GLFW;
 
 import java.lang.annotation.Retention;
@@ -12,7 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Module implements Wrapper, Listenable {
+public class Module implements Wrapper {
     private final String name;
     private final Category category;
     private String description;

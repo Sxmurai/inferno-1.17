@@ -1,9 +1,9 @@
 package me.sxmurai.inferno.impl.events.network;
 
-import me.zero.alpine.event.Cancellable;
+import me.sxmurai.inferno.impl.events.Cancelable;
 import net.minecraft.network.Packet;
 
-public class PacketEvent extends Cancellable {
+public class PacketEvent extends Cancelable {
     private final Packet<?> packet;
 
     public PacketEvent(Packet<?> packet) {

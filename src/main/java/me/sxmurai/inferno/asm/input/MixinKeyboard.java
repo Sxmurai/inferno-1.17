@@ -15,7 +15,7 @@ public class MixinKeyboard {
     @Inject(method = "onKey", at = @At("HEAD"))
     public void onKey(long window, int key, int scancode, int action, int modifiers, CallbackInfo info) {
         if (key != GLFW.GLFW_KEY_UNKNOWN && Wrapper.mc.currentScreen == null) {
-            Inferno.EVENT_BUS.post(new KeyEvent(KeyEvent.Action.fromAction(action), key));
+            Inferno.EVENT_BUS.post(new KeyEvent(KeyEvent.Action.fromAction(action), key, scancode));
         }
     }
 }

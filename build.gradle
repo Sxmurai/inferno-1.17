@@ -16,8 +16,8 @@ loom {
 
 repositories {
 	maven {
-		name = 'impactdevelopment-repo'
-		url = 'https://impactdevelopment.github.io/maven/'
+		name = "meteor-maven"
+		url = "https://maven.meteordev.org"
 	}
 }
 
@@ -26,8 +26,7 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	implementation "com.github.ZeroMemes:Alpine:${project.alpineVersion}"
-	implementation "net.jodah:typetools:${project.typetoolsVersion}"
+	implementation "meteordevelopment:orbit:${project.orbit_version}"
 }
 
 processResources {
