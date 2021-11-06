@@ -8,10 +8,9 @@ import meteordevelopment.orbit.EventHandler;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.math.Vec3d;
-import org.lwjgl.glfw.GLFW;
 
 @Module.Define(name = "Criticals", category = Module.Category.Combat)
-@Module.Info(description = "Scores critical hits for you", bind = GLFW.GLFW_KEY_C)
+@Module.Info(description = "Scores critical hits for you")
 public class Criticals extends Module {
     public final Setting<Mode> mode = new Setting<>("Mode", Mode.Packet);
 
